@@ -7,7 +7,7 @@
   .container{
     max-width: 1000px;
   } */
-  
+
 /* } */
 @media(max-width: 1200px){
   .container{
@@ -65,9 +65,6 @@
     display: flex;
     align-items: center;
   }
-  .logo img{
-    width: 200px;
-  }
   .click_icon img{
     width: 25px;
   }
@@ -120,6 +117,7 @@
   }
   .product_img img{
     height: 300px;
+    width: auto;
   }
   .detail_product{
     flex-wrap: wrap;
@@ -251,13 +249,13 @@
   }
 
   .icon{
-    gap: 30px;
+    gap: 20px;
   }
   .footer_list_pay{
     flex-wrap: wrap;
   }
   .card{
-    padding: 38px 15px;
+    padding: 38px 10px;
 
   }
   .list_user{
@@ -282,7 +280,159 @@
   font-size: 15px;
 }
 .order{
+  display: flex;
   flex-wrap: wrap;
   gap: 15px;
+  flex-direction: column;
+  width: 350px;
 }
+
+.login_content{
+  flex-direction: column;
+}
+.login_form input{
+  width: 300px;
+}
+.btn-register{
+  width: 300px;
+  font-size: 20px;
+}
+
+.longin_info p, .register_info p{
+  width: 300px;
+}
+.login_form form{
+  gap: 20px;
+}
+.logo img{
+  width: 170px;
+}
+.user_room, .login_title{
+  text-align: center;
+}
+.info{
+  display: block;
+  text-align: center;
+}
+.info_order{
+  align-items: center;
+}
+
+.list_card_orders{
+  align-items: center;
+}
+
+.my_card_orders h3 {
+  text-align: center;
+
+}
+.total_products_price{
+  flex-direction: column;
+}
+
+.order_btns{
+  justify-content: space-evenly;
+}
+.btn_order{
+  font-size: 15px;
+}
+.image_good{
+  max-width: 200px;
+  height: 150px;
+}
+.card_title {
+    text-align: center;
+    font-size: 15px;
+    width: 230px;
+}
+.price{
+  font-size: 20px;
+}
+
+.old_price{
+  font-size: 15px;
+}
+.data_price{
+  font-size: 15px;
+}
+.btn_text{
+  font-size: 20px;
+}
+.btn_card{
+  width: 200px;
+  height: 54px;
+  gap: 15px;
+}
+.card{
+  height: 490px;
+}
+.detail_product{
+  flex-direction: column;
+  align-items: center;
+}
+.title__product {
+  font-size: 15px;
+  text-align: center;
+}
+.price_color {
+    justify-content: center;
+}
+.btn_cage1 {
+    width: 200px;
+    padding: 0;
+    gap: 0;
+}
+.list_button {
+    flex-direction: column;
+}
+
+.btn_cage1 span {
+  padding: 20px 15px;
+}
+.list_info {
+    gap: 15px;
+    margin: 14px 0;
+}
+
+.list_info li {
+    gap: 2px;
+    flex-direction: column;
+}
+.title__product {
+    width: 200px;
+}
+.price_product h3 {
+    font-size: 25px;
+}
+.color_squer{
+  width: 20px;
+  height: 20px;
+}
+.price_product, .color_product {
+    gap: 10px;
+}
+.box_color {
+    gap: 20px;
+    margin-top: 8px;
+}
+.product_info{
+display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.product_img{
+  width:300px;
+}
+.title_info {
+    font-size: 25px;
+}
+.content__title {
+        font-size: 15px;
+}
+
+.same_product_text {
+    justify-content: space-evenly;
+}
+
+
 }
