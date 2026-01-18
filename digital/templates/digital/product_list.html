@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+
+{% endblock header %}
+
+
+{% block main %}
+
+<main>
+    <div class="same_products">
+    <div class="content">
+        <div class="container">
+
+            {% if products %}
+            <h3 class="content__title">Мои избранные товары</h3>
+            {% endif %}
+
+            {% if not products %}
+            <div class="not_list">
+                <h1>Нет избранных товаров</h1>
+                <p>Добавьте избранные товары из каталога.</p>
+            </div>
+            {% endif %}
+
+            <div class="content__cards">
+                {% for product in products %}
+
+                {% include 'digital/components/_cart.html' %}
+
+                {% endfor %}
+
+            </div>
+
+
+        </div>
+        {% if products %}
+        {% include 'digital/components/_pagination.html' %}
+        {% endif %}
+    </div>
+</div>
+</main>
+
+
+{% endblock main %}
+
+

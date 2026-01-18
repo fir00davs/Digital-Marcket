@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+<main>
+    <div class="content">
+        <div class="container">
+
+            {% include 'digital/components/_detail_product.html' %}
+
+            {% include 'digital/components/_product_info.html' %}
+
+        </div>
+    </div>
+</main>
+
+
+{% endblock header %}
+
+
+{% block main %}
+
+<main>
+    <div class="same_products">
+    <div class="content">
+        <div class="container">
+            <div class="same_product_text">
+                <h2 class="content__title">Похожие товары</h2>
+                <a href="{% url 'category' product.category.parent.slug %}" class="content__title"><span>Больше Товаров</span> <img
+                        src="{% static 'image/icons/errow_right.svg' %}"
+                        alt=""></a>
+            </div>
+            <div class="content__cards">
+                {% for product in same_products %}
+
+                {% include 'digital/components/_cart.html' %}
+
+                {% endfor %}
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+</main>
+
+
+{% endblock main %}
+
+
+
+
+

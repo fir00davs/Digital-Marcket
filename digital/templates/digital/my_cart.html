@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load static %}
+
+{% block header %}
+
+
+{% endblock header %}
+
+
+{% block main %}
+
+<main>
+
+
+    <div class="content">
+        <div class="container">
+            {% if products_cart %}
+            <div class="my_card_orders">
+                <h3>Моя Корзина</h3>
+            </div>
+
+            <div class="total_products_price">
+                <p class="total_products_cart"><span>Общее количество: </span> {{ cart_quantity }}</p>
+                <p class="total_price_cart"><span>Общая стоимость: </span> {{ cart_price|intcomma }}$</p>
+            </div>
+            {% endif %}
+            {% if not products_cart %}
+            <div class="not_list">
+                <h1>Нет товаров в корзине</h1>
+                <p>Добавьте товары из каталога, чтобы оформить заказ.</p>
+            </div>
+            {% endif %}
+            <ul class="list_card_orders ">
+                {% for p_cart in products_cart %}
+                <li class="order  order_cart">
+                    <div class="info">
+                        <a href="{{ p_cart.product.get_absolute_url }}">
+                            <img class="order_cart_img" src="{{ p_cart.product.image.url }}" alt="">
+                        </a>
+                        <div class="info_order">
+                            <h4 class="product_title">{{ p_cart.product.title }}</h4>
+                            <div class="color_quantity">
+                                <div class="color"><p>Цвет:</p><span>{{ p_cart.product.color_name }}</span></div>
+
+                                <div class="quantity"><p>Кол-во:</p> <span>{{ p_cart.quantity }}</span>
+
+                                    <div class="quantity_arrow">
+
+                                        <a href="{% url 'action_cart' p_cart.product.slug 'add' %}">
+                                            <img data-product="id" data-action="add" class="chg-quantity update-cart"
+                                                 src="{% static 'image/icons/arrow-up.png' %}" alt="">
+                                        </a>
+
+                                        <a href="{% url 'action_cart' p_cart.product.slug 'delete' %}">
+                                            <img data-product="id" data-action="delete" class="chg-quantity update-cart"
+                                                 src="{% static 'image/icons/arrow-down.png' %}" alt="">
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="price_cart">
+                        <p class="product_price_title">Стоимость</p>
+                        <p class="product_price">{{ p_cart.product.get_price|intcomma }}$</p>
+                    </div>
+
+                    <div class="data_add">
+                        <p class="product_data">Дата добавления</p>
+                        <div class="data"><img src="{% static 'image/icons/clarity_date-line.svg' %}" alt="">
+                            <span>{{ p_cart.added_at }}</span>
+                        </div>
+                    </div>
+                    <div class="price_cart">
+                        <p class="product_price_title">Итого</p>
+                        <p class="product_price">{{ p_cart.get_total_price|intcomma  }}$</p>
+                    </div>
+
+                </li>
+                {% endfor %}
+            </ul>
+
+            {% if products_cart %}
+            <div class="order_btns">
+                <a href="{% url 'clear_cart' %}" class="btn_order">Очистить корзину</a>
+                <form action="{% url 'checkout' %}" method="post">
+                {% csrf_token %}
+                <button class="btn_order" type="submit">Оформить заказ</button>
+                </form>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+
+</main>
+
+{% endblock main %}

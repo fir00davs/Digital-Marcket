@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+{% include 'digital/components/_filter.html' %}
+
+{% endblock header %}
+
+
+{% block main %}
+
+<main>
+    <div class="same_products">
+    <div class="content">
+        <div class="container">
+
+            <div class="content__cards">
+                {% for product in products %}
+
+                {% include 'digital/components/_cart.html' %}
+
+                {% endfor %}
+
+            </div>
+
+
+        </div>
+        {% include 'digital/components/_pagination.html' %}
+
+    </div>
+</div>
+</main>
+
+
+{% endblock main %}
+
+
+
+
+

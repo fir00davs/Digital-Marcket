@@ -1,0 +1,31 @@
+{% load static %}
+
+<div class="nav__header">
+    <div class="container">
+        <div class="nav_info">
+            <div class="nav_left">
+                {% if messages %}
+                <div class="messages-container mb-4">
+                    {% for message in messages %}
+                    <div class="alert alert-dismissible fade show">
+                        {{ message }}
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div class="nav_right">
+                {% if not request.user.is_authenticated %}
+                <a href="{% url 'auth' %}">Вход</a>
+                <a href="{% url 'auth_reg' %}">Регистрация</a>
+                {% else %}
+                <a href="{% url 'logout' %}">Выход</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

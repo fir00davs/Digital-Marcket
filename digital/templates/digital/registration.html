@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block main %}
+
+
+<main>
+    <div class="content">
+        <div class="container">
+            <h2 class="login_title">Регистрация</h2>
+
+            <div class="login_content">
+                <div class="login">
+                    <div class="login_form">
+                        {% for message in messages %}
+                        <span class="error" style="margin-bottom: -40px;">{{ message }}</span>
+                        {% endfor %}
+                        <form action="{% url 'register' %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                {{ reg_form.username }}
+                            </div>
+                            <div class="form-group">
+                                {{ reg_form.first_name }}
+                            </div>
+                            <div class="form-group">
+                                {{ reg_form.last_name }}
+                            </div>
+                            <div class="form-group">
+                                {{ reg_form.email }}
+                            </div>
+                            <div class="form-group">
+                                {{ reg_form.password1 }}
+                            </div>
+                            <div class="form-group">
+                                {{ reg_form.password2 }}
+                            </div>
+                            <div class="form-group">
+                                {{ reg_form.phone_number }}
+                            </div>
+                            <div class="form-group">
+                                {{ reg_form.photo }}
+                            </div>
+                            <button class="btn btn-register" type="submit">Зарегистироваться</button>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="register_info">
+                    <h2 class="first_visit">Уже есть аккаунт?</h2>
+                    <p>Если Вы уже проходили регистрацию, войдите через Ваш аккаунт или восстоновите свой доступ. </p>
+                    <a href="{% url 'auth' %}" class="btn-to_login">Войти</a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+
+{% endblock main %}

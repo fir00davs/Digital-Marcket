@@ -1,0 +1,35 @@
+{% load static %}
+{% load humanize %}
+
+
+<div class="detail_product">
+    <div class="product_img">
+        <img class="product_img-img" src="{{ product.image.url }}" alt="">
+    </div>
+    <div class="product_info">
+        <h2 class="title__product">{{ product.title }}</h2>
+        <div class="price_color">
+            <div class="price_product">
+                <p>Цена:</p>
+                <h3>{{ product.get_price|intcomma }}$</h3>
+            </div>
+            <div class="color_product">
+                <p>Цвет:</p>
+                <div class="box_color">
+                    {% for model in same_models %}
+                    <a href="{{ model.get_absolute_url }}" class="color_squer" style="background-color: {{ model.color_code }};width: 25px;
+                    height: 25px;border: 2px solid grey;border-radius: 5px;"></a>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+        <div class="list_button">
+            <a href="{% url 'action_cart' product.slug 'add' %}" class="btn btn_cage1"><img src="{% static 'image/icons/cage.svg' %}" alt="">
+                <span>В корзину</span> </a>
+
+            <a href="#" class="btn btn_cage2"><span>Купить в рассрочку</span> </a>
+
+        </div>
+    </div>
+</div>

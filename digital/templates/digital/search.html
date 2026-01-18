@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block main %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12">
+            {% if query %}
+            {% if products %}
+            <div class="content">
+                <div class="container">
+                    <div class="content__cards">
+
+                        {% for product in products %}
+
+                        {% include 'digital/components/_cart.html' %}
+
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="text-center py-5" style="max-width: 500px; margin: 60px auto; padding: 50px 30px; text-align: center;
+    font-size: x-large; border-radius: 16px; box-shadow: 0 15px 30px rgba(15,40,89,0.1);">
+                <h4>Ничего не найдено</h4>
+                <p>Попробуйте изменить запрос поиска</p>
+            </div>
+            {% endif %}
+            {% else %}
+            <div class="text-center py-5" style="max-width: 500px; margin: 60px auto; padding: 50px 30px; text-align: center;
+    font-size: x-large; border-radius: 16px; box-shadow: 0 15px 30px rgba(15,40,89,0.1);">
+                <h4>Введите запрос для поиска</h4>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

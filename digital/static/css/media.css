@@ -1,0 +1,288 @@
+/* @media(max-width: 1300px){
+  .content__images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container{
+    max-width: 1000px;
+  } */
+  
+/* } */
+@media(max-width: 1200px){
+  .container{
+    max-width: 960px;
+  }
+  .dropdown {
+    display: inline-block;
+    height: 100%;
+  }
+  .label_search{
+    display: none;
+  }
+  .header_nav_menu{
+    display: none;
+  }
+  .content__images img{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .content__title{
+    justify-content: center;
+  }
+
+  .content{
+    margin: 50px 0 50px 0
+  }
+  .list_label{
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .filter_in {
+    width: 400px;
+  }
+  .detail_product{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .content__title{
+    font-size: 25px;
+  }
+  .header_baner{
+    height: 400px;
+  }
+
+}
+
+
+@media(max-width: 992px){
+  .container{
+    max-width: 720px;
+  }
+  .dropdown{
+    height: 80px;
+    display: flex;
+    align-items: center;
+  }
+  .logo img{
+    width: 200px;
+  }
+  .click_icon img{
+    width: 25px;
+  }
+  .burger_text{
+    font-size: 15px;
+  }
+  .burger_list a img{
+    width: 20px;
+  }
+  .footer__block{
+    justify-content: center;
+  }
+  .footer_title{
+    text-align: center;
+  }
+  .footer_list{
+    text-align: center;
+  }
+  .content__title{
+    justify-content: center;
+  }
+  .content__images img{
+    width: 100%;
+  }
+  .nav_right a{
+    font-size: 15px;
+  }
+
+  .filter_lang {
+    font-size: 15px;
+  }
+  .filter_lang option{
+    font-size: 15px;
+  }
+
+  .filter_city{
+    font-size: 15px;
+  }
+
+  .filter_city option{
+    font-size: 15px;
+  }
+
+  .btn_cage2{
+    padding: 20px 26px;
+  }
+  .btn_cage1 span{
+    padding: 25px 30px;
+    font-size: 20px;
+  }
+  .product_img img{
+    height: 300px;
+  }
+  .detail_product{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .title__product{
+    font-size: 30px;
+    text-align: center;
+  }
+  .btn_cage2 span{
+    font-size: 20px;
+  }
+
+
+  .list_left .list_right{
+    font-size: 20px;
+  }
+  .list_right{
+    font-size: 20px;
+  }
+
+  .user_block, .user {
+    justify-content: center;
+    align-items: center;
+  }
+  .user_room, .user_title{
+    text-align: center;
+  }
+  .lis__user_info{
+    align-items: center;
+  }
+
+  .order img{
+    height: 80px;
+  }
+  .product_title {
+    width: 200px;
+    font-size: 15px;
+  }
+  .color, .quantity{
+    font-size: 10px;
+  }
+  .color_quantity {
+    gap: 40px;
+  }
+  .product_price {
+    font-size: 15px;
+  }
+  .data img{
+    height: 20px;
+  }
+  .data span{
+    font-size: 13px;
+  }
+
+  .list_orders{
+    padding: 20px 0;
+  }
+  .product_price {
+    margin: 0 30px 0 40px;
+  }
+  .header_baner{
+    height: 300px;
+  }
+  .banner_text p{
+    font-size: 20px;
+  }
+
+  .banner_text h2{
+    font-size: 30px;;
+  }
+  .content__cards{
+    justify-content: center;
+  }
+}
+
+
+
+@media(max-width: 768px){
+  .container{
+    max-width: 540px;
+  }
+  .list_left .list_right{
+    font-size: 20px;
+  }
+  .list_right{
+    font-size: 20px;
+  }
+  .list_button{
+    margin-top: 100px;
+  }
+
+  .product_title {
+    width: 190px;
+    font-size: 10px;
+}
+.product_price {
+  font-size: 13px;
+}
+
+.banner_text{
+  gap: 20px;
+}
+
+}
+
+
+@media(max-width: 576px){
+  .container{
+    max-width: 100%;
+  }
+
+  .banner_text{
+    padding: 0 20px;
+    gap: 0;
+  }
+  .banner_text p{
+    font-size: 10px;
+    line-height: 20px;
+  }
+
+  .banner_text h2{
+    font-size: 16px;
+    line-height: 40px;
+  }
+
+  .nav_right a{
+    font-size: 15px;
+  }
+
+  .icon{
+    gap: 30px;
+  }
+  .footer_list_pay{
+    flex-wrap: wrap;
+  }
+  .card{
+    padding: 38px 15px;
+
+  }
+  .list_user{
+    width: 380px;
+  }
+  .content_midle_text{
+    width: 380px;
+  }
+  .btn_profile {
+    width: 270px;
+    font-size: 18px;
+  }
+
+  .header_baner{
+    height: 170px;
+  }
+
+.list_user span {
+  font-size: 15px;
+}
+.list_user p{
+  font-size: 15px;
+}
+.order{
+  flex-wrap: wrap;
+  gap: 15px;
+}
+}

@@ -1,0 +1,41 @@
+{% load static %}
+{% load humanize %}
+{% load digital_tags %}
+
+{% if request.user.is_authenticated %}
+{% get_favorites request.user as favs %}
+{% endif %}
+
+<div class="card">
+    <p class="product_discount">{% if product.discount %}<img src="{% static 'image/icons/discount.svg' %}" alt="">{% endif %}</p>
+    <a href="{{ product.get_absolute_url }}">
+        <div class="card_img">
+            <img src="{{ product.image.url }}" alt="" class="image_good">
+        </div>
+        <p class="card_title">{{ product.title }}</p>
+        <div class="card_price">
+            <p class="price">{{ product.get_price|intcomma }}$ {% if product.discount %}
+                <span class="old_price price">{{ product.price|intcomma }}$</span>{% endif %}</p>
+            <span class="data_price">{{ product.get_price_month }}$ / 12 мес</span>
+        </div>
+    </a>
+    <div class="card_button">
+        {% if product.quantity %}
+        <a class="btn_card" href="{% url 'action_cart' product.slug 'add' %}"><img src="{% static 'image/icons/cage.svg' %}" alt="">
+            <span class="btn_text">В корзину</span></a>
+        {% else %}
+        <a class="btn_card"><img src="{% static 'image/icons/cage.svg' %}" alt="">
+            <span class="btn_text">Нет товара корзине</span></a>
+        {% endif %}
+        <a href="{% url 'action_fav' product.slug %}" class="link_fav">
+            <svg width="28" height="24" viewBox="0 0 28 24" fill="{% if product in favs %}#082040{% else %}none{% endif %}"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.375 1C4.57813 1 1.5 4.07813 1.5 7.875C1.5 14.75 9.625 21 14 22.4538C18.375 21 26.5 14.75 26.5 7.875C26.5 4.07813 23.4219 1 19.625 1C17.3 1 15.2438 2.15438 14 3.92125C13.3661 3.01825 12.5239 2.28131 11.5447 1.77281C10.5656 1.2643 9.47831 0.999222 8.375 1Z"
+                      stroke="#0F2859" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </div>
+</div>
+
+
+

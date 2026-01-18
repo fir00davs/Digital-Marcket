@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'components/_style.html' %}
+
+    <title>{{ title }}</title>
+</head>
+
+<body>
+
+<!-- header start -->
+<header>
+
+    {% include 'components/_nav__header.html' %}
+
+    <nav>{% include 'components/_nav_menu_icon.html' %}</nav>
+
+    {% include 'components/_header_nav_menu.html' %}
+
+    {% block header %}
+
+    {% include 'components/_header_banner.html' %}
+
+    {% endblock header%}
+
+</header>
+
+<!-- header end -->
+
+
+<!-- Main start -->
+
+{% block main %}
+
+
+{% endblock main %}
+
+<!-- Main end -->
+
+<!-- Footer start -->
+
+{% include 'layouts/_footer.html' %}
+
+<!-- Footer end -->
+
+{% include 'components/_script.html' %}
+
+{% block js %}
+
+
+{% endblock js %}
+</body>
+
+</html>

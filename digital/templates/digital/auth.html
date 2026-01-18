@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block main %}
+
+<main>
+    <div class="content">
+        <div class="container">
+            <h2 class="login_title">Авторизация</h2>
+
+
+            <div class="login_content">
+                <div class="login">
+                    <div class="login_form">
+
+                        <form action="{% url 'login' %}" method="post" enctype="multipart/form-data">
+                            {% for message in messages %}
+                            <span class="first_visit" style="margin-bottom: -40px;">{{ message }}</span>
+                            {% endfor %}
+                            {% csrf_token %}
+                            <div class="form-group">
+                                {{ log_form.username }}
+                            </div>
+                            <div class="form-group">
+                                {{ log_form.password }}
+                            </div>
+                            <button class="btn btn-login" type="submit">Войти</button>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="longin_info">
+                    <h2 class="first_visit">Впервые у нас?</h2>
+                    <p>Создайте свой аккаунт и совершайте покупки как в интернет-магазине так в сети оффлайн магазинах
+                        бренда.</p>
+                    <a href="{% url 'auth_reg' %}" class="btn-to_register">Регистрация</a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+
+{% endblock main %}
