@@ -1,10 +1,15 @@
 @import url(fonts.css);
+@import url(media.css);
 * {
   margin: 0;
   padding: 0;
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
+}
+body{
+  margin: 0 auto;
+  max-width: 1600px
 }
 
 .nav__header {
@@ -200,7 +205,7 @@
 .dropdown:hover .dropdown-content {
   display: flex;
   z-index: 2;
-  
+
   padding: 25px;
 }
 
@@ -224,7 +229,7 @@
 }
 
 .burger_list:hover{
-  
+
   border: 1px solid #CFDDF6;
   border-radius: 10px;
 }
@@ -807,7 +812,7 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 150%;
-  color: #082040;   
+  color: #082040;
 }
 
 .brand{
@@ -1092,7 +1097,7 @@
 .user_img{
   width: 160px;
   height: 160px;
-  
+
 }
 
 .user_img img{
@@ -1144,7 +1149,7 @@
 }
 
 .user_name p{
-  
+
   font-family: 'Medium';
   font-style: normal;
   font-weight: 400;
@@ -1251,8 +1256,8 @@
     flex-direction: column;
     gap: 19px;
   }
-  
-  
+
+
   .product_price{
     margin: 0 49px 0 64px;
     font-family: 'Bold';
@@ -1262,7 +1267,7 @@
     line-height: 150%;
     color: #082040;
   }
-  
+
 
 
   .data img{
@@ -1276,20 +1281,20 @@
     line-height: 150%;
     color: #7787A6;
   }
-  
+
   .content_order .list_orders.active{
     display: block;
   }
-  
+
   .content_connect{
     margin-top: 80px;
     margin-bottom: 140px;
   }
-  
+
   .content_midle_text{
     margin: 40px 0 80px 0;
   }
-  
+
   .content_top_text{
     font-family: 'Medium';
     font-style: normal;
@@ -2103,3 +2108,20 @@ font-family: 'Regul';
         margin-right: 20px;
     }
 }
+
+.color_squer{
+    background-color: #000000;
+    width: 25px;
+    height: 25px;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
